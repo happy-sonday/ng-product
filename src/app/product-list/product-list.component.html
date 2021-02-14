@@ -1,1 +1,15 @@
-<p>product-list works!</p>
+<h2>Products</h2>
+<!-- ngFor는 반복되는 자료를 for문처럼 읽어들여 dom의 구조가 변경되기 때문에 구조적 지시자( Structural directives)  -->
+<div *ngFor="let product of products">
+  <!-- Interpolation {{ }}
+주입식이라고도 하며 컴포넌트.ts의 프로퍼티 값을 문자로 렌더링하게 해준다.
+-->
+  <h3>
+    <!-- property binding [] dom이 가지고 있는 속성과 ts에 있는 property 값을 바인딩 -->
+    <a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+  </h3>
+  <!-- ngIf 또한 구조적 지시자로 product.description이 존재할때 templete에 노출된다  -->
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+</div>
