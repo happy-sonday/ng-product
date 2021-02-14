@@ -18,5 +18,8 @@
 
   <!-- ProductListComponent의 자식으로 view 표현된다. -->
   <!-- product 객체를 자식 컴포넌트에서사용하므로 @input과 부모의 propety명이 동일해야한다 -->
-  <app-product-alerts [product]="product"> </app-product-alerts>
+  <!-- (notify)는 product-alert에서 output 데코레이터에 의해 정의되어 새로운 dom property처럼 작동해
+        product-list의 onNotify()과 binding -->
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
 </div>
