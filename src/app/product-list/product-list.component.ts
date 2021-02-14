@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { products } from '../products';
+import { Products } from '../products';
 
 @Component({
   selector: 'app-product-list',
@@ -7,10 +7,10 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  products = products;
+  products = Products;
 
   share() {
-    window.alert('The product has been shared!');
+    alert('The product has been shared!');
   }
   constructor() {}
 

@@ -12,4 +12,11 @@
   </h3>
   <!-- ngIf 또한 구조적 지시자로 product.description이 존재할때 templete에 노출된다  -->
   <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <!-- ()괄호를 사용하여 클릭이벤트와 share() binding -->
+  <button (click)="share()">Share</button>
+
+  <!-- ProductListComponent의 자식으로 view 표현된다. -->
+  <!-- product 객체를 자식 컴포넌트에서사용하므로 @input과 부모의 propety명이 동일해야한다 -->
+  <app-product-alerts [product]="product"> </app-product-alerts>
 </div>
